@@ -13,8 +13,8 @@ export class UserService {
     private userRepository: Repository<User>,
   ) {}
 
-  async findByEmail(email: string, username: string): Promise<User | null> {
-    return this.userRepository.findOne({ where: { email, username } });
+  async findByEmail(email: string): Promise<User | null> {
+    return this.userRepository.findOne({ where: { email } });
   }
 
   async create(createUserDto: CreateUserDto) {
